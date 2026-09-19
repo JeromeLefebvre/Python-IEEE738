@@ -11,8 +11,9 @@ def dynamic_viscosity(ambient_temperature, conductor_temperature):
 
 def air_density(ambient_temperature, conductor_temperature, elevation):
     """From section 4.5.2, eq 14a, valid for SI units."""
+
     Tfilm = (conductor_temperature + ambient_temperature) / 2
-    # 1.525e-4 = 1.525*pow(10,-4)
+
     return (1.293 - 1.525e-4 * elevation + 6.379e-9 * elevation ** 2) / (
         1 + 0.00367 * Tfilm
     )
